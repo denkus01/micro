@@ -1,0 +1,36 @@
+[
+  {
+    "eventVersion": "2.0",
+    "eventSource": "aws:s3",
+    "awsRegion": "us-east-2",
+    "eventTime": "2017-06-22T10:54:02.805Z",
+    "eventName": "ObjectCreated:Put",
+    "userIdentity": {
+      "principalId": "AWS:AROAJSCWZEEMCOSYSSD4E:NdbObInitFunction"
+    },
+    "requestParameters": {
+      "sourceIPAddress": "172.17.193.15"
+    },
+    "responseElements": {
+      "x-amz-request-id": "768B0F622F328775",
+      "x-amz-id-2": "QKmBRvcHFK1Jv/AATCO0yvWVcOgvZR5keLgHJW8yKiHCrCaPl8gkXB+t4o3yP3sw20VNa8/h5JY="
+    },
+    "s3": {
+      "s3SchemaVersion": "1.0",
+      "configurationId": "np-loader-jpr_event",
+      "bucket": {
+        "name": "np-loader-sources-dev-snapshot",
+        "ownerIdentity": {
+          "principalId": "A2V6K34DSNGDM7"
+        },
+        "arn": "arn:aws:s3:::np-loader"
+      },
+      "object": {
+        "key": "jpr/OUT/",
+        "size": 968,
+        "eTag": "c29a603084d9d2135010ad3a0006edca",
+        "sequencer": "00594BA1CABB3BE7E1"
+      }
+    }
+  }
+]

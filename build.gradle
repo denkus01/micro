@@ -1,0 +1,55 @@
+plugins {
+    id 'java'
+    id 'groovy'
+}
+
+group 'micro'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+dependencies {
+    //AWS
+    compile 'com.amazonaws:aws-lambda-java-core:1.2.0',
+            'com.amazonaws:aws-lambda-java-events:2.2.1',
+            'com.amazonaws:aws-java-sdk-dynamodb:1.11.448'
+
+    compile 'log4j:log4j:1.2.17',
+            'org.slf4j:slf4j-log4j12:1.7.25'
+
+    compile 'org.apache.poi:poi:3.9'
+
+
+    testCompile 'org.objenesis:objenesis:2.6'
+    compile 'cglib:cglib:3.2.9'
+
+
+    compile 'org.projectlombok:lombok:1.18.4'
+
+    compile 'org.springframework:spring-context:5.1.2.RELEASE'
+
+    compile 'com.amazonaws:aws-lambda-java-log4j:1.0.0'
+
+    compile 'com.fasterxml.jackson.core:jackson-core:2.9.6'
+
+    compile 'com.google.guava:guava:19.0'
+
+
+
+    //Dependencies Test
+    testCompile 'org.spockframework:spock-spring:1.2-groovy-2.5',
+            'org.spockframework:spock-core:1.2-groovy-2.5',
+            'org.codehaus.groovy:groovy-all:2.5.4',
+            'org.springframework:spring-test:5.1.2.RELEASE'
+
+}
+
+task fatZip(type: Zip) {
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+
+
